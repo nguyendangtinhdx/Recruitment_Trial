@@ -1,0 +1,206 @@
+<% include partials/_header %>
+<br />
+<h1 class="text-center">
+    <%= Title %>
+</h1>
+<br />
+<div id="wrap" class="container">
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <button class="btn btn-success btn-sm button buttonAdd" data-toggle="modal" data-target="#ModalAdd">
+                <%= ButtonAdd %></button>
+            <a href="/logout" class="btn btn-info btn-sm button buttonLogout" style="float: right;" onclick="return confirm('<%= AlertLogout %>')">
+                <%= ButtonLogout %></a>
+        </div>
+        <!-- <div class="form-group col-md-4">
+            <form action="/search" method="GET">
+                <div class="input-group input-group-sm mb-3">
+                    <input type="text" name="keyword" class="form-control" placeholder="<%= placeholderSearch %>">
+                    <div class="input-group-append">
+                        <button class="btn btn-warning button" type="submit">
+                            <%= ButtonSearch %></button>
+                    </div>
+                </div>
+            </form>
+        </div> -->
+    </div>
+    <div class="table-responsive">
+        <table id="bootstrap-data-table" class="table-striped table-bordered table-hover table-sm">
+            <thead>
+                <tr class="text-center">
+                    <th class="thNo">
+                        <%= LabelNo %>
+                    </th>
+                    <th class="thName">
+                        <%= LabelName %>
+                    </th>
+                    <th class="thAge">
+                        <%= LabelAge %>
+                    </th>
+                    <th class="thComment">
+                        <%= LabelComment %>
+                    </th>
+                    <th class="thOption">
+                        <%= LabelOption %>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (data) { %>
+                <% for(var i = 0; i < data.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= i+1 %>
+                    </td>
+                    <td>
+                        <%= data[i].name %>
+                    </td>
+                    <td>
+                        <%= data[i].age %>
+                    </td>
+                    <td>
+                        <span class="comment"><%= data[i].comment %></span>
+                    </td>
+                    <td class="text-center">
+                        <button class="btn btn-primary btn-sm button buttonUpdate" data-toggle="modal" data-target="#ModalUpdate"
+                            onclick="getData('<%= data[i].id %>','<%= data[i].name %>','<%= data[i].age %>',`<%= data[i].comment %>`)">
+                            <%= ButtonUpdate %></button>
+                        <!-- <a href="/update/<%= data[i].id %>" class="btn btn-primary btn-sm button buttonUpdate">
+                        <%= ButtonUpdate %></a> -->
+                        <a href="/delete/<%= data[i].id %>" class="btn btn-danger btn-sm button buttonDelete" onclick="return confirm('<%= AlertDelete %>')">
+                            <%= ButtonDelete %></a>
+                    </td>
+                </tr>
+                <% } %>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+
+    <br />
+
+    <!-- Modal Add -->
+    <div class="modal fade" id="ModalAdd" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="exampleModalLabel">
+                        <%= TitleFormAdd %>
+                    </h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="/add" method="POST">
+                        <div class="row">
+                            <label htmlFor="Name" class="col-md-2 col-form-label-sm">
+                                <%= LabelName %> (<span class="required">*</span>)</span></label>
+                            <div class="col-md-4">
+                                <input id="name" type="text" name="name" class="form-control form-control-sm" maxlength="10"
+                                    placeholder="<%= placeholderName %>" autofocus>
+                                <span id="errNameAdd" class="error"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label htmlFor="Age" class="col-md-2 col-form-label-sm">
+                                <%= LabelAge %> (<span class="required">*</span>)</label>
+                            <div class="col-md-4">
+                                <input id="age" type="number" name="age" class="form-control form-control-sm Age" min="1"
+                                    max="120" placeholder="<%= placeholderAge %>" autofocus>
+                                <span id="errAgeAdd" class="error"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label htmlFor="Comment" class="col-md-2 col-form-label-sm">
+                                <%= LabelComment %></label>
+                            <div class="col-md-8">
+                                <textarea type="text" name="comment" class="form-control form-control-sm" rows="3" placeholder="<%= placeholderComment %>"></textarea>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-success btn-sm button buttonModalAdd" onclick="return CheckValidateAdd()">
+                                <%= ButtonAdd %>
+                            </button>
+                            <button type="button" class="btn btn-secondary btn-sm button" data-dismiss="modal">
+                                <%= ButtonCancel %>
+                            </button>
+                        </div>
+                        <br />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Update -->
+    <div class="modal fade" id="ModalUpdate" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="exampleModalLabel">
+                        <%= TitleFormUpdate %>
+                    </h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="/update" method="POST">
+                        <div class="row">
+                            <label htmlFor="Name" class="col-md-2 col-form-label-sm"></label>
+                            <div class="col-md-4">
+                                <input id="getId" type="text" name="id" class="form-control form-control-sm" autofocus
+                                    hidden>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label htmlFor="Name" class="col-md-2 col-form-label-sm">
+                                <%= LabelName %> (<span class="required">*</span>)</label>
+                            <div class="col-md-4">
+                                <input id="getName" type="text" name="name" maxlength="10" placeholder="<%= placeholderName %>"
+                                    class="form-control form-control-sm" autofocus>
+                                <span id="errNameUpdate" class="error"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label htmlFor="Age" class="col-md-2 col-form-label-sm">
+                                <%= LabelAge %> (<span class="required">*</span>)</label>
+                            <div class="col-md-4">
+                                <input id="getAge" type="number" name="age" min="1" max="120" placeholder="<%= placeholderAge %>"
+                                    class="form-control form-control-sm AgeUpdate" autofocus>
+                                <span id="errAgeUpdate" class="error"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label htmlFor="Comment" class="col-md-2 col-form-label-sm">
+                                <%= LabelComment %></label>
+                            <div class="col-md-8">
+                                <textarea id="getComment" type="text" name="comment" class="form-control form-control-sm" rows="3"
+                                    placeholder="<%= placeholderComment %>"></textarea>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary btn-sm button buttonUpdate" onclick="return CheckValidateUpdate()">
+                                    <%= ButtonUpdate %>
+                                </button>
+                                <button type="button" class="btn btn-secondary btn-sm button" data-dismiss="modal">
+                                    <%= ButtonCancel %>
+                                </button>
+                            </div>
+                        <br />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $('#bootstrap-data-table-export').DataTable();
+</script>
+<script src="/js/datatables-init.js"></script>
+
+<% include partials/_footer %>

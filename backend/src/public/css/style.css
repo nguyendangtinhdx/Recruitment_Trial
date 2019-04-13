@@ -1,0 +1,150 @@
+.login{
+    width: 40%;
+    margin: auto;
+}
+.button{
+    width: 90px;
+}
+.buttonLogout{
+    margin-right: 15px;
+}
+.buttonAdd{
+    margin-left: 15px;
+}
+.buttonModalAdd{
+    margin-right: 10px;
+}
+.buttonUpdate{
+    margin-right: 10px;
+}
+.comment{
+    white-space: pre-line;
+    word-break:break-all;
+    word-wrap:break-word;
+    overflow-wrap: break-word;
+}
+.required{
+    color:red;
+}
+.thNo{
+    width: 5%;
+}
+.thName{
+    width: 15%;
+}
+.thAge{
+    width: 5%;
+}
+.thComment{
+    width: 35%;
+}
+.thOption{
+    width: 16%;
+}
+.error{
+    font-size: 13px;
+    color: #DC3545;
+}
+.errorLogin{
+    color: #DC3545;
+}
+@media only screen and (max-width: 1920px) { /* PC Large */
+    .thOption{
+        width: 15%;
+    }
+}
+@media only screen and (max-width: 1366px) { /* PC */
+    .thOption{
+        width: 16%;
+    }
+}
+@media  only screen and (min-width: 1200px) and (max-width: 1365px) {
+    .thNo{
+        width: 5%;
+    }
+    .thName{
+        width: 15%;
+    }
+    .thAge{
+        width: 5%;
+    }
+    .thComment{
+        width: 35%;
+    }
+    .thOption{
+        width: 16%;
+    }
+    .buttonUpdate{
+        margin-right: 10px;
+    }  
+}
+@media  only screen and (min-width: 1023px) and (max-width: 1199px) {
+    .thNo{
+        width: 5%;
+    }
+    .thName{
+        width: 15%;
+    }
+    .thAge{
+        width: 5%;
+    }
+    .thComment{
+        width: 35%;
+    }
+    .thOption{
+        width: 20%;
+    }
+    .buttonUpdate{
+        margin-right: 10px;
+    }
+}
+@media only screen and (max-width: 1024px) { /* iPad Pro */
+    .thOption{
+        width: 20%;
+    }
+    .buttonUpdate{
+        margin-right: 10px;
+    }
+    .buttonDelete{
+        margin-top: 0px;
+    }
+    .login{
+        width: 95%;
+        margin: auto;
+    }
+}
+@media  only screen and (min-width: 980px) and (max-width: 1023px) {
+    .thOption{
+        width: 30%;
+    }
+    .buttonUpdate{
+        margin-right: 10px;
+    }
+}
+@media  only screen and (min-width: 800px) and (max-width: 979px) {
+    .thOption{
+        width: 30%;
+    }
+    .buttonUpdate{
+        margin-right: 10px;
+    }
+}
+@media  only screen and (min-width: 769px) and (max-width: 799px) {
+    .thOption{
+        width: 30%;
+    }
+    .buttonUpdate{
+        margin-right: 10px;
+    }
+}
+@media only screen and (max-width: 768px) { /* iPad  */
+    .thOption{
+        width: 5%;
+    }
+    .buttonUpdate{
+        margin-left: 10px;
+    }
+    .buttonDelete{
+        margin-top: 10px;
+    }
+}

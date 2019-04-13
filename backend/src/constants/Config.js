@@ -1,0 +1,34 @@
+var config = {};
+
+config.Title = '管理画面';
+config.TitleLogin = 'ログイン';
+config.LabelUsername = 'ユーザー名';
+config.LabelPassword = 'パスワード';
+config.LabelNo = 'No';
+config.LabelName = '名前';
+config.LabelAge = '年齢';
+config.LabelComment = 'コメント';
+config.LabelOption = 'オプション';
+config.ButtonAdd = '登録';
+config.ButtonCancel = 'キャンセル';
+config.ButtonUpdate = '編集';
+config.ButtonDelete = '削除';
+config.ButtonBack = 'キャンセル';
+config.ButtonSearch = 'サーチ';
+config.ButtonLogin = 'ログイン';
+config.ButtonLogout = 'ログアウト';
+config.AlertDelete = '削除してもよろしいですか。';
+config.AlertLogout = 'ログアウトしてもよろしいですか。';
+config.TitleFormAdd = '新規登録';
+config.TitleFormUpdate = '編集';
+config.placeholderName = '名前';
+config.placeholderAge = '年齢';
+config.placeholderComment = 'コメント';
+config.placeholderSearch = 'キーワード';
+config.placeholderUsername = 'ユーザー名';
+config.placeholderPassword = 'パスワード';
+config.errorUsername = 'ユーザー名を入力してください';
+config.errorPassword = 'パスワードを入力してください';
+config.loginFailed = 'ログインが失敗しました。';
+
+module.exports = config;

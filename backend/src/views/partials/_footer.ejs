@@ -1,0 +1,34 @@
+<script>
+    $(document).ready(function () {
+        var reg = new RegExp('^[0-9]+$');
+        $('.Age').keypress(function (event) {
+            if(reg.test($('.Age').val())){
+                if ($('.Age').val().length > 2) {
+                    event.preventDefault();
+                }
+            }
+            if (event.which == 44 || event.which == 46 || event.which == 101) {
+                event.preventDefault();
+            }
+        });
+    });
+	$(document).ready(function () {
+        var reg = new RegExp('^[0-9]+$');
+        $('.AgeUpdate').keypress(function (event) {
+            if(reg.test($('.AgeUpdate').val())){
+                if ($('.AgeUpdate').val().length > 2) {
+                    event.preventDefault();
+                }
+            }
+            if (event.which == 44 || event.which == 46 || event.which == 101) {
+                event.preventDefault();
+            }
+        });
+    });
+</script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/popper.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+</body>
+
+</html>

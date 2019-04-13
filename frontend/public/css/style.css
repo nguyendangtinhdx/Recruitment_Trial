@@ -1,0 +1,165 @@
+#form{
+    width: 70%; 
+}
+.table-striped{width: 100%;}
+.comment{
+    white-space: pre-line;
+    word-break:break-all;
+    word-wrap:break-word;
+    overflow-wrap: break-word;
+}
+#errName{
+	color: #DC3545;
+	font-size: 13px;
+}
+#errAge{
+	color: #DC3545;
+    font-size: 13px;
+}
+#deleteError{
+    display: none;
+}
+#showimage{
+    position: fixed;
+    top: 35%;
+    left: 48%;
+}
+.required{
+    color: red;
+}
+.button{
+    width: 90px;
+}
+.error{
+    font-size: 13px;
+    color: #DC3545;
+}
+.buttonAdd{
+    margin-right: 10px;
+}
+.thName{
+    width:30%;
+}
+.thComment{
+    width: 60%;
+}
+.thOption{
+    width: 15%;
+}
+
+@media only screen and (max-width: 1920px) { /* PC Large */
+    .form{
+        width: 70%; 
+    }
+    .thName{
+        width: 30%;
+    }
+    .thComment{
+        width: 50%;
+    }
+    .thOption{
+        width: 20%;
+    }
+}
+@media only screen and (max-width: 1366px) { /* PC */
+    .thName{
+        width: 30%;
+    }
+    .thComment{
+        width: 50%;
+    }
+    .thOption{
+        width: 20%;
+    }
+}
+@media  only screen and (min-width: 1200px) and (max-width: 1365px) {
+    .thName{
+        width: 30%;
+    }
+    .thComment{
+        width: 50%;
+    }
+    .thOption{
+        width: 20%;
+    }
+}
+@media  only screen and (min-width: 1023px) and (max-width: 1199px) {
+    .thName{
+        width: 20%;
+    }
+    .thComment{
+        width: 45%;
+    }
+    .thOption{
+        width: 25%;
+    }
+}
+@media only screen and (max-width: 1024px) { /* iPad Pro */
+    .thName{
+        width: 30%;
+    }
+    .thComment{
+        width: 45%;
+    }
+    .thOption{
+        width: 25%;
+    }
+}
+@media  only screen and (min-width: 980px) and (max-width: 1023px) {
+    .thName{
+        width: 30%;
+    }
+    .thComment{
+        width: 45%;
+    }
+    .thOption{
+        width: 25%;
+    }
+}
+@media  only screen and (min-width: 800px) and (max-width: 979px) {
+    .thName{
+        width: 20%;
+    }
+    .thComment{
+        width: 40%;
+    }
+    .thOption{
+        width: 30%;
+    }
+}
+@media  only screen and (min-width: 769px) and (max-width: 799px) {
+    .thName{
+        width: 30%;
+    }
+    .thComment{
+        width: 40%;
+    }
+    .thOption{
+        width: 30%;
+    }
+}
+@media only screen and (max-width: 768px) { /* iPad  */
+    .title{
+        font-size: 30px;
+    }
+    #form{
+        width: 95%; 
+    }
+    .thName{
+        width: 220px;
+    }
+    .thComment{
+        width: 350px;
+    }
+    .thOption{
+        width: 50px;
+    }
+    .buttonAdd{
+        width: 90px;
+        margin-left: 10px;
+    }
+    .btnDelete{
+        margin-top: 10px;
+        margin-left: 0px;
+    }
+}

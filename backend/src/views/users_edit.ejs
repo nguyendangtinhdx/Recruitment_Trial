@@ -1,0 +1,48 @@
+<% include partials/_header %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 card">
+      <div class="card-body">
+        <form action="/update/<%= data.id %>" method="POST">
+          <div class="row">
+            <label htmlFor="Name" class="col-md-3 col-form-label-sm"><%= LabelName %></label>
+            <div class="col-md-6">
+              <input type="text" name="name" value="<%= data.name%>" maxlength="10" placeholder="<%= placeholderName %>" class="form-control form-control-sm"
+                autofocus required="required">
+            </div>
+          </div>
+          <div class="row">
+            <label htmlFor="Age" class="col-md-3 col-form-label-sm"><%= LabelAge %></label>
+            <div class="col-md-6">
+              <input id="Age" type="number" name="age" value="<%= data.age%>" min="1" max="150" placeholder="<%= placeholderAge %>" class="form-control form-control-sm"
+                autofocus required="required">
+            </div>
+          </div>
+          <div class="row">
+            <label htmlFor="Comment" class="col-md-3 col-form-label-sm"><%= LabelComment %></label>
+            <div class="col-md-9">
+              <textarea type="text" name="comment" class="form-control form-control-sm" placeholder="<%= placeholderComment %>"><%= data.comment%></textarea>
+            </div>
+          </div>
+          <br>
+          <div class="text-center">
+            <a href="/" class="btn btn-secondary btn-sm button buttonUpdate">
+              <%= ButtonBack %>
+            </a>
+            <button type="submit" class="btn btn-primary btn-sm button">
+              <%= ButtonUpdate %>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>
+
+
+
+
+<% include partials/_footer %>
